@@ -23,15 +23,14 @@ fetch(`https://filltext.com/?rows=10&fname={firstName}&lname={lastName}&category
         const cats = document.querySelectorAll(".cat")
         for (let i = 0; i < cats.length; i++) {
             cats[i].addEventListener('click', function (event) {
-                if (cats[i].classList.contains("active")){
-                    cats[i].classList.remove("active")
-                    renderElements(users)
+                if (document.getElementsByClassName("active").length > 0 ){
+                    const active = document.querySelector(".active")
+                    active.classList.remove("active")
                 }
-                else{
-                    cats[i].classList.add("active")
-                    const filtered = users.filter(e => e.category === event.target.innerText)
-                    renderElements(filtered)
-                }
+                cats[i].classList.add("active")
+                const filtered = users.filter(e => e.category === event.target.innerText)
+                renderElements(filtered)
+
             });
         }
     })
@@ -46,8 +45,13 @@ const renderElements = (users) => {
         let tempDiv = document.createElement("div");
         tempDiv.classList.add("user");
         tempDiv.innerHTML = `
+            <div class="left">
             <h2 class="avatar">${avatar}</h2>
             <h1 class="name">${element.fname} ${element.lname}</h1>
+            </div>
+            <div class="right">
+                <h3> ${element.category} </h3>
+            </div>
         `
         userElement.appendChild(tempDiv)
     })
