@@ -1,0 +1,50 @@
+.container{
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: gray;
+    padding: 5rem;
+}
+
+.container h1{
+    text-align: center;
+}
+
+#categories.categories{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    color: white;
+}
+
+
+#categories.categories div{
+    padding: 10px 50px;
+    background-color: blue;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 2rem;
+}
+.active{
+    background-color: rgba(32, 56, 177, 0.37) !important;
+}
+.user .avatar{
+    background-color: gray;
+    padding: 2rem;
+    border-radius: 50%;
+
+}
+
+.user .name{
+    margin-left: 1rem;
+}
+.user {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    background-color: rebeccapurple;
+    margin: 2rem;
+    border-radius: 30px;
+}
